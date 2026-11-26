@@ -223,6 +223,10 @@ A few `CR` errors in dmesg at boot are normal.
 - **Renaming the root label** (useful with more than one ps5-linux drive): change `root=LABEL=` in `cmdline.txt` **and** the `/` line in `/etc/fstab`.
 </details>
 
+### Games lag or stutter at high settings
+
+The GPU gets only **512 MB of VRAM** by default, too little for high texture settings, so games keep swapping textures and stutter. Raise it in **PS5 Hardware Control → Memory → VRAM** to **4-6 GB**, then turn the PS5 fully off and boot Linux through the loader again (a warm restart doesn't change it). VRAM comes out of the 16 GB RAM: with 6 GB, Linux keeps about 8 GB. If swap fills up in long sessions, use 4 GB.
+
 ### Wi-Fi and Bluetooth
 
 - **Wi-Fi gone after a warm restart (kexec):** turn the PS5 **fully off** (not rest mode) and boot Linux again.
